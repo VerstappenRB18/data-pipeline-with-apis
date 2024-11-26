@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  fastf1:
+    container_name: fastf1
+    build: .
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: fastf1
+      SLEEP_TIME: 1
+
+networks:
+  default:
+    external:
+      name: kafka-network
